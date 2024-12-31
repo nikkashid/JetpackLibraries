@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.nikhil.jetpacklibraries.fragments.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_workManagerFragment"
+            app:destination="@id/workManagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workManagerFragment"
+        android:name="com.nikhil.jetpacklibraries.fragments.workManager.WorkManagerFragment"
+        android:label="fragment_work_manager"
+        tools:layout="@layout/fragment_work_manager">
+        <argument
+            android:name="mainToWorkManagerString"
+            app:argType="string"
+            android:defaultValue="Default String Value" />
+        <argument
+            android:name="mainToWorkManagerInt"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
